@@ -1,0 +1,148 @@
+﻿@using Cuahangthucung.Models
+@{
+    ViewBag.Title = "Details1";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    /*body {
+        background-color: #000
+    }*/
+
+    .card {
+        border: none
+    }
+
+    .product {
+        background-color: #eee
+    }
+
+    .brand {
+        font-size: 13px
+    }
+
+    .act-price {
+        color: red;
+        font-weight: 700
+    }
+
+    .dis-price {
+        text-decoration: line-through
+    }
+
+    .about {
+        font-size: 14px
+    }
+
+    .color {
+        margin-bottom: 10px
+    }
+
+    label.radio {
+        cursor: pointer
+    }
+
+        label.radio input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        label.radio span {
+            padding: 2px 9px;
+            border: 2px solid #ff0000;
+            display: inline-block;
+            color: #ff0000;
+            border-radius: 3px;
+            text-transform: uppercase
+        }
+
+        label.radio input:checked + span {
+            border-color: #ff0000;
+            background-color: #ff0000;
+            color: #fff
+        }
+
+    .btn-danger {
+        background-color: #ff0000 !important;
+        border-color: #ff0000 !important
+    }
+
+        .btn-danger:hover {
+            background-color: #da0606 !important;
+            border-color: #da0606 !important
+        }
+
+        .btn-danger:focus {
+            box-shadow: none
+        }
+
+    .cart i {
+        margin-right: 10px
+    }
+</style>
+<script>
+    function change_image(image) {
+
+        var container = document.getElementById("main-image");
+
+        container.src = image.src;
+    }
+
+
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+
+
+
+
+
+
+    });
+</script>
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="images p-3">
+                            <div class="text-center p-4"> <img id="main-image" src="~/Image/@Model.AnhBia" width="250" /> </div>
+                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="~/Image/@Model.AnhBia" width="70"> <img onclick="change_image(this)" src="~/Image/cho4.jpg" width="70"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"> <i class="fa fa-backward"></i><a href="@Url.Action("Index1","User")" <span class="ml-1">Trở về</span></a> </div> <i class="fa fa-shopping-cart text-muted"></i>
+                            </div>
+                            <div class="mt-4 mb-3">
+                                <span class="text-uppercase text-muted brand">Loại thú cưng: </span>@Model.MaLoaiTC
+                                <h5 class="text-uppercase">Tên thú cưng: @Model.TenTC </h5>
+                                <div class="price d-flex flex-row align-items-center">
+                                    <h5>
+                                        Giá bán:  <div class="ml-2"> <small class="dis-price">@*@Model.GiaBan.ToString("C0")*@ 99999999VNĐ</small> <span style="color:red">40% OFF</span> </div>
+                                        <span class="act-price">@Model.GiaBan.ToString("C0") VNĐ</span>
+                                    </h5>
+
+                                </div>
+                               
+                            </div>
+                            <p class="about">Mô tả: @Model.MoTa</p>
+                            @*<div class="sizes mt-5">
+                                <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
+                            </div>*@
+                        <div class="cart mt-4 align-items-center">
+                            <a href="@Url.Action("ThemGioHang", "GioHang", new { ms = Model.MaTC, url = Request.Url.ToString() })">
+                                <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

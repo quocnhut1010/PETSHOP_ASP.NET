@@ -1,0 +1,235 @@
+﻿@using Cuahangthucung.Models
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN ĐƠN HÀNG</h2>
+<table align="center" border="1">
+    <tr style="text-align:center; font-weight:bold;">
+        <td>Mã Thú Cưng</td>
+        <td>Tên Thú Cưng</td>
+        <td>Ảnh Bìa</td>
+        <td>Số Lượng</td>
+        <td>Đơn Giá</td>
+        <td>Thành Tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center; font-weight:bold;">
+            <td align="center">@item.iMaTC</td>
+            <td>@item.sTenTC</td>
+            <td><img alt="@item.sTenTC" src="~/Image/@item.sAnhBia" width="200" height="200" /></td>
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaTC = item.iMaTC }))
+            {
+                <td align="center">
+                    @item.iSoLuong
+                </td>
+                <td align="center">@string.Format("{0:#,##0,0}", @item.dDonGia)</td>
+                <td align="center">@string.Format("{0:#,##0,0}", @item.dThanhTien)</td>
+            }
+        </tr>
+    }
+    <tr>
+    <tr>
+
+        <td colspan="3" style="text-align:right; color:red; font-weight:bold; padding-right:5px;">
+
+            Số lượng thú cưng: @string.Format("{0:#,##0}", @ViewBag.TongSoLuong)
+        </td>
+        <td colspan="3" style="text-align:center; color:red; font-weight:bold;">
+            Tổng tiền: @string.Format("{0:#,##0,0}", @ViewBag.TongTien) VNĐ
+        </td>
+    </tr>
+
+    <tr style="font-weight:bold; color:blue; text-align:right;">
+        <td colspan="9">
+            @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "GioHang", "GioHang")
+        </td>
+    </tr>
+</table>
+<h2 style="text-align:center">THÔNG TIN ĐẶT HÀNG</h2>
+@{
+    KHACHHANG kh = (KHACHHANG)Session["Taikhoanuser"];
+}
+<table align="center">
+    @using (Html.BeginForm("Payment", "GioHang", FormMethod.Post))
+    {
+        @Html.Hidden("MaKH", kh.MaKH)
+        @Html.ValidationSummary(true)
+        <tr style="height:40px;">
+            <td>Họ tên khách hàng:</td>
+            <td style="font-weight:bold">@kh.HoTen</td>
+        </tr>
+        <tr style="height:40px;">
+            <td>Địa chỉ:</td>
+            <td style="font-weight:bold">@kh.DiaChi</td>
+        </tr>
+        <tr style="height:40px;">
+            <td>Điện thoại:</td>
+            <td style="font-weight:bold">@kh.DienThoai</td>
+        </tr>
+        <tr style="height:40px;">
+            <td>Ngày đặt:</td>
+            <td style="font-weight:bold">
+                @DateTime.Now.ToShortDateString()
+            </td>
+        </tr>
+        <tr style="height:40px;">
+            <td></td>
+            <td>
+                <h2 style="text-align:center">THÔNG TIN CHUYỂN KHOẢN</h2>
+                <div class="form-container">
+                    <div class="image-container">
+                        <img src="~/Image/bidv (1).jpg" alt="BIDV Logo">
+                    </div>
+                    <div class="info-container">
+                        <h3>Chủ tài khoản: BUI TRUNG TIEN</h3>
+                        <a>Số tài khoản:6504519764</a>
+                        <br />
+                        <a>Ngân hàng: BIDV</a>
+                        <br />
+                        <b>Nội dung chuyển khoản:</b><a>Tênđăngnhập-Masp+sđt</a>
+                        <br />
+                        <i>Chúng tôi sẽ gọi điện xác nhận đơn hàng của bạn.</i>
+                        <i>Cảm ơn đã tin tưởng sử dụng dịch vụ</i>
+                        <br />
+                        <button class="button">
+                            <a href="@Url.Action("Index","User")">Tiếp tục mua sắm</a>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <input type="submit" value="ĐẶT HÀNG VÀ THANH TOÁN ONLINE" />
+
+                @*<a href="@Url.Action("Payment", "GioHang")">
+                        <input type="button" value="ThanhToanOnline" name="TTOnline" />
+                    </a>*@
+                <input type="hidden" id="MaGiaoDich" name="MaGiaoDich" value="TransactionIDFromGateway" />
+
+
+            </td>
+        </tr>
+
+    }
+
+</table>
+<style>
+    table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    h2, td {
+        color: #333;
+    }
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+<style>
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        border: 1px solid #ccc;
+        max-width: 600px;
+        margin: 100px auto;
+        border-top-style: groove;
+        border-bottom-style: groove;
+        border-right-style: groove;
+        border-left-style: groove;
+    }
+
+    .image-container {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-top-style: groove;
+        border-bottom-style: groove;
+        border-right-style: groove;
+        border-left-style: groove;
+    }
+
+    .info-container {
+        flex: 2;
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    h3, b {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: aqua;
+        margin-top: 40px;
+        text-align: right;
+        border-radius: 10px 14px 10px 14px;
+    }
+</style>
+
+<script>
+    // Check if the ViewBag variable is set
+    var vnpayTranId = @Html.Raw(Json.Encode(ViewBag.vnpayTranId));
+
+    // Update the MaGiaoDich hidden input field with the vnpayTranId value
+    if (vnpayTranId) {
+        document.getElementById("MaGiaoDich").value = vnpayTranId;
+    }
+</script>

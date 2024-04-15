@@ -1,0 +1,110 @@
+﻿@using Cuahangthucung.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Cuahangthucung.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "Quản Lí Khách Hàng";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>KhachHang</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="text-align:center" ; width="100px">
+            Mã khách hàng
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Họ tên khách hàng
+        </th>
+        <th style="text-align:center" ; width="200px">
+            Tài khoản
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Mật khẩu
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Email
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Địa chỉ
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Điện thoại
+        </th>
+        <th style="text-align:center" ; width="100px">
+            Ngày sinh
+        </th>
+
+        <th style="text-align:center" ; width="200px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.MaKH })" class="btn btn-warning" role="button"
+                   style="background-color: #f39c12; color: #fff; font-size:15px">Sửa</a>
+
+                <a href="@Url.Action("Details", new { id = item.MaKH })" class="btn btn-primary" role="button"
+                   style="background-color: #007bff; color: #fff; font-size: 15px">Chi tiết</a>
+
+                <a href="@Url.Action("Delete", new { id = item.MaKH })" class="btn btn-danger" role="button"
+                   style="background-color: #dc3545; color: #fff; font-size: 15px">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="Menu">
+    @Html.PagedListPager(Model, page => Url.Action("KhachHang", new { page = page }))
+</div>
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination a {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .pagination a.active {
+                background-color: #f9b536;
+                color: #fff;
+            }
+</style>

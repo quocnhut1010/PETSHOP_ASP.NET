@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Cuahangthucung.Models.GioHang>
+@{
+    ViewBag.Title = "GioHangPartial";
+}
+<li style="list-style-type: none">
+    <a href="@Url.Action("GioHang","GioHang")">
+        <span class="glyphicon glyphicon-shopping-card"></span>
+        Giỏ hàng(@ViewBag.TongSoLuong)
+    </a>
+</li>
+

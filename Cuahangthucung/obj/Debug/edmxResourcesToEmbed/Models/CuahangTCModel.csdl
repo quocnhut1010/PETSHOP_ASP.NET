@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuahangTCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="MaAd" />
+    </Key>
+    <Property Name="MaAd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TenDN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quyen" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DaThanhToan" Type="Boolean" />
+    <Property Name="TinhTrangGiaoHang" Type="Int32" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="MaKH" Type="Int32" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_DONDATHANG_KHACHHANG" FromRole="DONDATHANG" ToRole="KHACHHANG" />
+    <NavigationProperty Name="THANHTOANs" Relationship="CuahangTCModel.FK_THANHTOAN_DONDATHANG" FromRole="DONDATHANG" ToRole="THANHTOAN" />
+    <Property Name="MaGiaoDich" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="CuahangTCModel.FK_CHITIETDATHANG_DONDATHANG" FromRole="DONDATHANG" ToRole="CHITIETDATHANG" />
+    <NavigationProperty Name="CHITIETTHANHTOANs" Relationship="CuahangTCModel.FK_CHITIETTHANHTOAN_DONDATHANG" FromRole="DONDATHANG" ToRole="CHITIETTHANHTOAN" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaiKhoan" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK_DONDATHANG_KHACHHANG" FromRole="KHACHHANG" ToRole="DONDATHANG" />
+    <NavigationProperty Name="THANHTOANs" Relationship="CuahangTCModel.FK_THANHTOAN_KHACHHANG" FromRole="KHACHHANG" ToRole="THANHTOAN" />
+  </EntityType>
+  <EntityType Name="LOAITHUCUNG">
+    <Key>
+      <PropertyRef Name="MaLoaiTC" />
+    </Key>
+    <Property Name="MaLoaiTC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiTC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="THUCUNGs" Relationship="Self.FK_THUCUNG_LOAITHUCUNG" FromRole="LOAITHUCUNG" ToRole="THUCUNG" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="THUCUNGs" Relationship="Self.FK_THUCUNG_NHACUNGCAP" FromRole="NHACUNGCAP" ToRole="THUCUNG" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="THUCUNG">
+    <Key>
+      <PropertyRef Name="MaTC" />
+    </Key>
+    <Property Name="MaTC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AnhBia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaLoaiTC" Type="Int32" />
+    <Property Name="MaNCC" Type="Int32" />
+    <NavigationProperty Name="LOAITHUCUNG" Relationship="Self.FK_THUCUNG_LOAITHUCUNG" FromRole="THUCUNG" ToRole="LOAITHUCUNG" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK_THUCUNG_NHACUNGCAP" FromRole="THUCUNG" ToRole="NHACUNGCAP" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="Self.FK_CHITIETDATHANG_THUCUNG" FromRole="THUCUNG" ToRole="CHITIETDATHANG" />
+  </EntityType>
+  <EntityType Name="CHITIETDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+      <PropertyRef Name="MaTC" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" />
+    <Property Name="MaTC" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="THUCUNG" Relationship="Self.FK_CHITIETDATHANG_THUCUNG" FromRole="CHITIETDATHANG" ToRole="THUCUNG" />
+    <NavigationProperty Name="DONDATHANG" Relationship="CuahangTCModel.FK_CHITIETDATHANG_DONDATHANG" FromRole="CHITIETDATHANG" ToRole="DONDATHANG" />
+  </EntityType>
+  <Association Name="FK_DONDATHANG_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THUCUNG_LOAITHUCUNG">
+    <End Role="LOAITHUCUNG" Type="Self.LOAITHUCUNG" Multiplicity="0..1" />
+    <End Role="THUCUNG" Type="Self.THUCUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITHUCUNG">
+        <PropertyRef Name="MaLoaiTC" />
+      </Principal>
+      <Dependent Role="THUCUNG">
+        <PropertyRef Name="MaLoaiTC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THUCUNG_NHACUNGCAP">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
+    <End Role="THUCUNG" Type="Self.THUCUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="THUCUNG">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETDATHANG_THUCUNG">
+    <End Role="THUCUNG" Type="Self.THUCUNG" Multiplicity="1" />
+    <End Role="CHITIETDATHANG" Type="Self.CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUCUNG">
+        <PropertyRef Name="MaTC" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="MaTC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CuahangTCEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+    <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="LOAITHUCUNGs" EntityType="Self.LOAITHUCUNG" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="THUCUNGs" EntityType="Self.THUCUNG" />
+    <EntitySet Name="CHITIETDATHANGs" EntityType="Self.CHITIETDATHANG" />
+    <AssociationSet Name="FK_DONDATHANG_KHACHHANG" Association="Self.FK_DONDATHANG_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THUCUNG_LOAITHUCUNG" Association="Self.FK_THUCUNG_LOAITHUCUNG">
+      <End Role="LOAITHUCUNG" EntitySet="LOAITHUCUNGs" />
+      <End Role="THUCUNG" EntitySet="THUCUNGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THUCUNG_NHACUNGCAP" Association="Self.FK_THUCUNG_NHACUNGCAP">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="THUCUNG" EntitySet="THUCUNGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDATHANG_THUCUNG" Association="Self.FK_CHITIETDATHANG_THUCUNG">
+      <End Role="THUCUNG" EntitySet="THUCUNGs" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <EntitySet Name="THANHTOANs" EntityType="CuahangTCModel.THANHTOAN" />
+    <AssociationSet Name="FK_THANHTOAN_DONDATHANG" Association="CuahangTCModel.FK_THANHTOAN_DONDATHANG">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THANHTOAN_KHACHHANG" Association="CuahangTCModel.FK_THANHTOAN_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    </AssociationSet>
+    <EntitySet Name="CHITIETTHANHTOANs" EntityType="CuahangTCModel.CHITIETTHANHTOAN" />
+    <AssociationSet Name="FK_CHITIETDATHANG_DONDATHANG" Association="CuahangTCModel.FK_CHITIETDATHANG_DONDATHANG">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETTHANHTOAN_DONDATHANG" Association="CuahangTCModel.FK_CHITIETTHANHTOAN_DONDATHANG">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="CHITIETTHANHTOAN" EntitySet="CHITIETTHANHTOANs" />
+    </AssociationSet>
+    <EntitySet Name="Messages" EntityType="CuahangTCModel.Message" />
+    <EntitySet Name="Comments" EntityType="CuahangTCModel.Comment" />
+  </EntityContainer>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="MaThanhToan" />
+    </Key>
+    <Property Name="MaThanhToan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDonHang" Type="Int32" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="PhuongThucThanhToan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayThanhToan" Type="DateTime" Precision="0" />
+    <Property Name="TongTienThanhToan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TrangThaiThanhToan" Type="Int32" />
+    <NavigationProperty Name="DONDATHANG" Relationship="CuahangTCModel.FK_THANHTOAN_DONDATHANG" FromRole="THANHTOAN" ToRole="DONDATHANG" />
+    <NavigationProperty Name="KHACHHANG" Relationship="CuahangTCModel.FK_THANHTOAN_KHACHHANG" FromRole="THANHTOAN" ToRole="KHACHHANG" />
+  </EntityType>
+  <Association Name="FK_THANHTOAN_DONDATHANG">
+    <End Type="CuahangTCModel.DONDATHANG" Role="DONDATHANG" Multiplicity="0..1" />
+    <End Type="CuahangTCModel.THANHTOAN" Role="THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THANHTOAN_KHACHHANG">
+    <End Type="CuahangTCModel.KHACHHANG" Role="KHACHHANG" Multiplicity="0..1" />
+    <End Type="CuahangTCModel.THANHTOAN" Role="THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CHITIETTHANHTOAN">
+    <Key>
+      <PropertyRef Name="MaThanhToan" />
+    </Key>
+    <Property Name="MaThanhToan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDonHang" Type="Int32" />
+    <Property Name="MaGiaoDich" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TongTien" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NgayThanhToan" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DONDATHANG" Relationship="CuahangTCModel.FK_CHITIETTHANHTOAN_DONDATHANG" FromRole="CHITIETTHANHTOAN" ToRole="DONDATHANG" />
+  </EntityType>
+  <Association Name="FK_CHITIETDATHANG_DONDATHANG">
+    <End Type="CuahangTCModel.DONDATHANG" Role="DONDATHANG" Multiplicity="1" />
+    <End Type="CuahangTCModel.CHITIETDATHANG" Role="CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETTHANHTOAN_DONDATHANG">
+    <End Type="CuahangTCModel.DONDATHANG" Role="DONDATHANG" Multiplicity="0..1" />
+    <End Type="CuahangTCModel.CHITIETTHANHTOAN" Role="CHITIETTHANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Principal>
+      <Dependent Role="CHITIETTHANHTOAN">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

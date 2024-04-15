@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Cuahangthucung.Models.Comment>
+
+@{
+    ViewBag.Title = "ViewPartial";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-subtitle {
+        color: #6c757d;
+    }
+
+    .card-text {
+        color: #343a40;
+    }
+
+    .text-muted {
+        color: #6c757d;
+    }
+</style>
+<h2 style="text-align:center; font-weight:bold">PHẢN HỒI CỦA KHÁCH HÀNG</h2>
+<div class="container">
+    <!-- Hiển thị danh sách comment -->
+    @foreach (var comment in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Họ và Tên: @comment.Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Email: @comment.Email</h6>
+                <p class="card-text">Nội dung: @comment.MessageText</p>
+                <p class="card-text"><small class="text-muted">Đã gửi vào: @comment.CreatedAt</small></p>
+            </div>
+        </div>
+    }
+</div>
+

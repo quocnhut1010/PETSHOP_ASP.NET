@@ -1,0 +1,19 @@
+﻿@using Cuahangthucung.Models
+@{
+    ViewBag.Title = "SPSale";
+    Layout = null;
+}
+<h2>@Model.TenTC</h2>
+        
+        <div class="home-product-item__price-old" style="color:red">99999999</div>
+
+        <img src="~/Image/cho4.jpg" alt="" style="width:150px;height:100px" />
+
+        <h3>
+            Giá ưu đãi:
+        </h3>
+        <p style="font-weight:bold; font-size:25px; color:red">
+            @Model.GiaBan.ToString("C0") VNĐ
+        </p>
+        @*<p style="font-size:18px">Giá bán: @Model.GiaBan.ToString("C")</p>*@
+

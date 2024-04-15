@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "TinhTongTien";
+    Layout = null;
+}
+
+
+
+@if (ViewBag.Error != null)
+{
+    <p class="text-danger">@ViewBag.Error</p>
+}
+else
+{
+    <p style="font-weight:bold; color:red">Doanh thu (tạm tính)  @ViewBag.TongTien.ToString("C0") VNĐ  </p>
+}
+

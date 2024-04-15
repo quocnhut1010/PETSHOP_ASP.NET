@@ -1,0 +1,316 @@
+﻿@using Cuahangthucung.Models
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order and Checkout</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+            .info-container h2 {
+                margin: 0;
+                color: #007bff;
+            }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+        .info-container h3,
+        .info-container b {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .payment-table th, .payment-table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .payment-table th {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .payment-table td {
+                background-color: #f8f9fa;
+            }
+
+
+        .form-container button,
+        .form-container input[type="submit"],
+        .form-container input[type="button"] {
+            flex: 1;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .form-container button:hover,
+            .form-container input[type="submit"]:hover,
+            .form-container input[type="button"]:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ORDER DETAILS</h2>
+
+        <table>
+            <tr>
+                <th>Mã Thú Cưng</th>
+                <th>Tên Thú Cưng</th>
+                <th>Ảnh Bìa</th>
+                <th>Số Lượng</th>
+                <th>Đơn Giá</th>
+                <th>Thành Tiền</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.iMaTC</td>
+                    <td>@item.sTenTC</td>
+                    <td><img alt="@item.sTenTC" src="~/Image/@item.sAnhBia" /></td>
+                    @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaTC = item.iMaTC }))
+                    {
+                        <td>
+                            @item.iSoLuong
+                        </td>
+                        <td>@string.Format("{0:#,##0,0}", @item.dDonGia) VNĐ</td>
+                        <td>@string.Format("{0:#,##0,0}", @item.dThanhTien) VNĐ</td>
+                    }
+                </tr>
+            }
+        </table>
+
+        <div class="info-container">
+            <div>
+                <span style="color: red; font-weight: bold;">Số lượng thú cưng: @string.Format("{0:#,##0}", @ViewBag.TongSoLuong)</span>
+            </div>
+            <div>
+                <span style="color: red; font-weight: bold;">Tổng tiền: @string.Format("{0:#,##0,0}", @ViewBag.TongTien) VNĐ</span>
+            </div>
+        </div>
+
+        <h2>THÔNG TIN ĐẶT HÀNG</h2>
+        @{
+            KHACHHANG kh = (KHACHHANG)Session["Taikhoanuser"];
+        }
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div>
+                <strong>Họ tên khách hàng:</strong> @kh.HoTen
+            </div>
+            <div>
+                <strong>Địa chỉ:</strong> @kh.DiaChi
+            </div>
+            <div>
+                <strong>Điện thoại:</strong> @kh.DienThoai
+            </div>
+            <div>
+                <strong>Ngày đặt:</strong> @DateTime.Now.ToShortDateString()
+            </div>
+            <h2>THÔNG TIN CHUYỂN KHOẢN</h2>
+            <div class="form-container">
+                <div class="image-container">
+                    <img src="~/Image/bidv.jpg" alt="QR Code">
+                </div>
+                <div class="payment-details">
+                    <h2>THÔNG TIN CHUYỂN KHOẢN</h2>
+                    <table class="payment-table">
+                        <tr>
+                            <th>Chủ tài khoản</th>
+                            <td>BUI TRUNG TIEN</td>
+                        </tr>
+                        <tr>
+                            <th>Số tài khoản</th>
+                            <td>6504519764</td>
+                        </tr>
+                        <tr>
+                            <th>Ngân hàng</th>
+                            <td>BIDV</td>
+                        </tr>
+                        <tr>
+                            <th>Nội dung chuyển khoản</th>
+                            <td>Tênđăngnhập-Masp+sđt</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <button>
+                    <a href="@Url.Action("Index1","User")" style="color:white">Tiếp tục mua sắm</a>
+                </button>
+                <input type="submit" value="ĐẶT HÀNG" />
+                <a href="@Url.Action("Payment", "GioHang")">
+                    <input type="button" value="Thanh toán Online" name="TTOnline" />
+                </a>
+            </div>
+        }
+    </div>
+</body>
+</html>
+<style>
+    /* ... (your existing styles) ... */
+
+    .payment-details {
+        flex: 2;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+        .payment-details h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+    .image-container {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    .payment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .payment-table th,
+        .payment-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .payment-table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .payment-table td {
+            background-color: #f8f9fa;
+        }
+</style>

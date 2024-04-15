@@ -1,0 +1,59 @@
+﻿<style>
+    #Datmua a {
+        display: inline-block;
+        background-color: red; /* Màu nền đỏ */
+        color: white; /* Màu chữ trắng */
+        text-decoration: none; /* Loại bỏ gạch chân dưới */
+        padding: 10px 20px; /* Kích thước padding cho nút */
+        border: none; /* Loại bỏ viền */
+        border-radius: 5px; /* Bo tròn góc cho nút */
+        cursor: pointer; /* Hiển thị con trỏ khi di chuột vào nút */
+    }
+
+    .pet-details-container {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .pet-image {
+        width: 30%;
+        border-left: dotted 1px;
+        border-color: azure;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pet-info {
+        width: 70%;
+        padding: 0 40px;
+    }
+</style>
+@using Cuahangthucung.Models
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:red; text-align:center; font-size:30px">Thông tin thú cưng</h2>
+
+<div class="pet-details-container">
+    <div class="pet-image">
+        <img src="~/Image/@Model.AnhBia" style="width:250px;height:250px" />
+    </div>
+    <div class="pet-info">
+        <h4 style="font-weight:bold">Tên thú cưng:<span style="font-size:16pt"> </span>@Model.TenTC</h4>
+        <p style="text-align:justify"><span style="font-weight:bold">Mô tả: </span> @Model.MoTa</p>
+        <p style="font-weight:bold">Giá bán: <span style="color:red; font-size:16pt"> @Model.GiaBan VNĐ</span></p>
+        <div id="Datmua">
+            <a href="@Url.Action("ThemGioHang","GioHang", new { ms = @Model.MaTC, url = Request.Url.ToString() })">
+
+               Đặt mua
+
+
+            </a>
+        </div>
+    </div>
+</div>

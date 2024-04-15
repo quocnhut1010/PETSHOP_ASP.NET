@@ -1,0 +1,180 @@
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.AssemblyReference.cache
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.CoreCompileInputs.cache
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Cuahangthucung.dll.config
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Cuahangthucung.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Cuahangthucung.pdb
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csc.exe
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csc.exe.config
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csc.rsp
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csi.exe
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csi.exe.config
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\csi.rsp
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.AppContext.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Collections.Immutable.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Console.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Globalization.Calendars.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.IO.Compression.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.IO.FileSystem.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Net.Http.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Net.Sockets.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Reflection.Metadata.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.ValueTuple.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Xml.XPath.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\vbc.exe
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\vbc.exe.config
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\vbc.rsp
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\VBCSCompiler.exe
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\roslyn\VBCSCompiler.exe.config
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Antlr3.Runtime.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\EntityFramework.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\EntityFramework.SqlServer.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Microsoft.Web.Infrastructure.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Newtonsoft.Json.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.Mvc.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Helpers.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Mvc.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Optimization.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Razor.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.Deployment.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.Razor.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\WebGrease.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\EntityFramework.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\EntityFramework.SqlServer.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.Mvc.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Helpers.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Mvc.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Optimization.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.Razor.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.Deployment.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\System.Web.WebPages.Razor.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Newtonsoft.Json.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Antlr3.Runtime.pdb
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.CopyComplete
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\obj\Debug\Cuahangthucung.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\obj\Debug\Cuahangthucung.pdb
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.EntityFramework.dll
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.EntityFramework.pdb
+D:\Lập Trình Web\Cuahangthucung\Cuahangthucung\bin\PagedList.EntityFramework.xml
+D:\PetShop1\shoppet\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.AssemblyReference.cache
+D:\PetShop1\shoppet\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.CoreCompileInputs.cache
+D:\PetShop1\shoppet\Cuahangthucung\obj\Debug\Cuahangthucung.dll
+D:\PetShop1\shoppet\Cuahangthucung\obj\Debug\Cuahangthucung.pdb
+D:\PetShop1\shoppet\Cuahangthucung\bin\Cuahangthucung.dll.config
+D:\PetShop1\shoppet\Cuahangthucung\bin\Cuahangthucung.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\Cuahangthucung.pdb
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csc.exe
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csc.exe.config
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csc.rsp
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csi.exe
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csi.exe.config
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\csi.rsp
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.Managed.Core.targets
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.AppContext.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Collections.Immutable.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Console.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Globalization.Calendars.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.IO.Compression.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.IO.FileSystem.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Net.Http.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Net.Sockets.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Reflection.Metadata.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.ValueTuple.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Xml.XmlDocument.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Xml.XPath.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\vbc.exe
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\vbc.exe.config
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\vbc.rsp
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\VBCSCompiler.exe
+D:\PetShop1\shoppet\Cuahangthucung\bin\roslyn\VBCSCompiler.exe.config
+D:\PetShop1\shoppet\Cuahangthucung\bin\Antlr3.Runtime.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\EntityFramework.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\EntityFramework.SqlServer.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\Microsoft.Web.Infrastructure.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\Newtonsoft.Json.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.EntityFramework.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.Mvc.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Helpers.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Mvc.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Optimization.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Razor.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.Deployment.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.Razor.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\WebGrease.dll
+D:\PetShop1\shoppet\Cuahangthucung\bin\EntityFramework.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\EntityFramework.SqlServer.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.EntityFramework.pdb
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.EntityFramework.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\PagedList.Mvc.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Helpers.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Mvc.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Optimization.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.Razor.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.Deployment.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\System.Web.WebPages.Razor.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\Newtonsoft.Json.xml
+D:\PetShop1\shoppet\Cuahangthucung\bin\Antlr3.Runtime.pdb
+D:\PetShop1\shoppet\Cuahangthucung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PetShop1\shoppet\Cuahangthucung\obj\Debug\Cuahangthucung.csproj.CopyComplete

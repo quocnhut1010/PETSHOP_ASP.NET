@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CHthucungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="MaAd" />
+    </Key>
+    <Property Name="MaAd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" />
+    <Property Name="TenDN" Type="varchar" MaxLength="30" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Quyen" Type="int" />
+  </EntityType>
+  <EntityType Name="CHITIETDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+      <PropertyRef Name="MaTC" />
+    </Key>
+    <Property Name="MaDonHang" Type="int" Nullable="false" />
+    <Property Name="MaTC" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+    </Key>
+    <Property Name="MaDonHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DaThanhToan" Type="bit" />
+    <Property Name="TinhTrangGiaoHang" Type="int" />
+    <Property Name="NgayDat" Type="smalldatetime" />
+    <Property Name="NgayGiao" Type="smalldatetime" />
+    <Property Name="MaKH" Type="int" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaiKhoan" Type="varchar" MaxLength="15" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="LOAITHUCUNG">
+    <Key>
+      <PropertyRef Name="MaLoaiTC" />
+    </Key>
+    <Property Name="MaLoaiTC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiTC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MoTa" Type="ntext" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="150" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="THUCUNG">
+    <Key>
+      <PropertyRef Name="MaTC" />
+    </Key>
+    <Property Name="MaTC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MoTa" Type="ntext" />
+    <Property Name="AnhBia" Type="varchar" MaxLength="50" />
+    <Property Name="NgayCapNhat" Type="smalldatetime" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="GiaBan" Type="money" />
+    <Property Name="MaLoaiTC" Type="int" />
+    <Property Name="MaNCC" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CHthucungModelStoreContainer">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETDATHANG" EntityType="Self.CHITIETDATHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAITHUCUNG" EntityType="Self.LOAITHUCUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THUCUNG" EntityType="Self.THUCUNG" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

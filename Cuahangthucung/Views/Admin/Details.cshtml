@@ -1,0 +1,92 @@
+﻿
+@model Cuahangthucung.Models.THUCUNG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>THUCUNG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnhBia)
+        </dt>
+
+        <dd>
+            <img src="~/Image/@Model.AnhBia" alt=" @Model.TenTC">
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLoaiTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoaiTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNCC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaTC }) |
+    @Html.ActionLink("Trở Về", "Pet")
+</p>

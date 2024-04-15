@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<br />
+<style>
+    .contact_section {
+        margin-bottom: 50px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<section class="contact_section ">
+    <div class="container px-0">
+        <div class="heading_container ">
+            <h2 class="">
+                KẾT NỐI ,GÓP Ý VỚI CỬA HÀNG CHÚNG TÔI
+            </h2>
+        </div>
+    </div>
+    <div class="container container-bg">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 px-0">
+                <div class="map_container">
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.780748297073!2d106.67059877068077!3d10.979915165271517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1afa65b1d3b%3A0x31155d219ba1ed06!2zRS1MZWFybmluZyAtIMSQ4bqhaSBo4buNYyBUaOG7pyBE4bqndSBN4buZdA!5e0!3m2!1svi!2s!4v1700622608308!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 px-0">
+                <form action="@Url.Action("SendMessage", "Admin")" method="post">
+                    <div>
+                        <input type="text" placeholder="Name" name="Name" /> <!-- Updated name attribute -->
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email" name="Email" /> <!-- Updated name attribute -->
+                    </div>
+                    <div>
+                        <input type="text" class="message-box" placeholder="Message" name="MessageText" /> <!-- Updated name attribute -->
+                    </div>
+                    <div class="d-flex ">
+                        <button type="submit">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/js/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="~/Scripts/js/custom.js"></script>

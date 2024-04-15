@@ -1,0 +1,246 @@
+﻿@using Cuahangthucung.Models
+@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.IPagedList<THUCUNG>
+@{
+    ViewBag.Title = "PetByTopic";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style type="text/css">
+    .row-cols-5 {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .product-details {
+        margin-top: 10px;
+    }
+
+    .product-title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .product-rating {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+        .product-rating span {
+            color: #f9b536;
+        }
+
+    .add-to-cart-button {
+        display: block;
+        width: 100%;
+        background-color: #ff0000;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination a {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .pagination a.active {
+                background-color: #f9b536;
+                color: #fff;
+            }
+
+    .home-product-item__price {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    .home-product-item__price-old {
+        margin-left: 10px;
+        font-size: 1.4rem;
+        color: #666;
+        text-decoration: line-through;
+    }
+
+    .home-product-item__price-current {
+        font-size: 1.6rem;
+        color: var(--primary-color);
+        margin-left: 10px;
+    }
+
+    .home-product-item__action {
+        display: flex;
+        justify-content: space-between;
+        margin: 6px 10px 0;
+    }
+
+    .home-product-item__like {
+        font-size: 1.3rem;
+    }
+
+    .home-product-item__like--liked .home-product-item__like-icon-fill {
+        display: inline-block;
+    }
+
+    .home-product-item__like--liked .home-product-item__like-icon-empty {
+        display: none;
+    }
+
+    i.home-product-item__like-icon-fill {
+        display: none;
+        color: #f63d30;
+    }
+
+    .home-product-item__sale-off {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 36px;
+        text-align: center;
+        background-color: rgba(255, 216, 64, 0.92);
+        border-top-right-radius: 2px;
+    }
+
+        .home-product-item__sale-off::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: -5px;
+            border-width: 0 20px 5px;
+            border-style: solid;
+            color: rgba(255, 216, 64, 0.92);
+            border-color: transparent currentColor transparent currentColor;
+        }
+
+    .home-product-item__sale-off-percent {
+        color: #ee4d2d;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+    }
+
+    .home-product-item__sale-off-label {
+        color: var(--white-color);
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        position: relative;
+        top: 2px;
+        font-weight: 600;
+    }
+</style>
+
+
+
+
+<hr>
+<section class="shop_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2 style="color:red; text-align:center; font-size:30px">
+                PET THEO LOẠI
+            </h2>
+        </div>
+        <div class="row">
+            @foreach (var Thucung in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="box">
+                        <a href="@Url.Action("Details1", "User", new { id = Thucung.MaTC })">
+                            <div class="img-box">
+                                <img alt="@Thucung.TenTC" src="~/Image/@Thucung.AnhBia">
+                            </div>
+                            <h6 style="text-align:center;font-weight:bold">
+                                @Thucung.TenTC
+                            </h6>
+                            <div class="detail-box">
+
+                                <div class="home-product-item__price">
+                                    <span class="home-product-item__price-old">99999999</span>
+                                    <span class="home-product-item__price-current">@Thucung.GiaBan</span>
+                                </div>
+                                <div class="new">
+                                    <span>
+                                        New
+                                    </span>
+                                </div>
+                                <div class="home-product-item__action">
+                                    <span class="home-product-item__like home-product-item__like--liked">
+                                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                    </span>
+                                </div>
+
+
+                            </div>
+                            <div class="product-rating">
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                            <p style="margin-left:50px; color:red; font-size:16px">Số lượng còn @Thucung.SoLuong</p>
+                            <p class="pull-left" style=" color:red; font-size:16px">500 đã bán</p>
+                            <p class="pull-right" style=" color:red; font-size:16px">155 reviews</p>
+                        </a>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { ms = Thucung.MaTC, url = Request.Url.ToString() })">
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+ Trang@(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("PetByTopic", new { MaloaiTC = ViewBag.MaLoaiTC, page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+
+

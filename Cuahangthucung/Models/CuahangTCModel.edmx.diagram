@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5dd354f82f84d73a3f1a3f0d4f91377" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="CuahangTCModel.ADMIN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.DONDATHANG" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.KHACHHANG" Width="1.5" PointX="7.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.LOAITHUCUNG" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.THUCUNG" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuahangTCModel.CHITIETDATHANG" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="CuahangTCModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CuahangTCModel.FK_THUCUNG_LOAITHUCUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="CuahangTCModel.FK_THUCUNG_NHACUNGCAP" ManuallyRouted="false" />
+        <AssociationConnector Association="CuahangTCModel.FK_CHITIETDATHANG_THUCUNG" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CuahangTCModel.THANHTOAN" Width="1.5" PointX="5.75" PointY="5.75" />
+        <AssociationConnector Association="CuahangTCModel.FK_THANHTOAN_DONDATHANG" />
+        <AssociationConnector Association="CuahangTCModel.FK_THANHTOAN_KHACHHANG" />
+        <EntityTypeShape EntityType="CuahangTCModel.CHITIETTHANHTOAN" Width="1.5" PointX="0.75" PointY="6" />
+        <AssociationConnector Association="CuahangTCModel.FK_CHITIETDATHANG_DONDATHANG" />
+        <AssociationConnector Association="CuahangTCModel.FK_CHITIETTHANHTOAN_DONDATHANG" />
+        <EntityTypeShape EntityType="CuahangTCModel.Message" Width="1.5" PointX="8.625" PointY="6.125" />
+        <EntityTypeShape EntityType="CuahangTCModel.Comment" Width="1.5" PointX="1.625" PointY="9.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,95 @@
+﻿@model Cuahangthucung.Models.THUCUNG
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>CHỈNH SỬA THÔNG TIN THÚ CƯNG</h4>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã thú cưng:</label>
+            <div class="col-md-10">
+                @*Chỉ hiển thị mã chủ đề không cho sửa*@
+                <input type="text" size="70" name="MaTC" value="@Model.MaTC" readonly />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên thú cưng:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="TenTC" value="@Model.TenTC" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoTa, "Mô Tả", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea name="MoTa" id="mota">@Model.MoTa</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnhBia, "Ảnh Bìa", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="FileUpload" />
+                <img src="~/Image/@Model.AnhBia" width="120"> (Ảnh hiện tại)
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayCapNhat, "Ngày cập nhật", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="NgayCapNhat" required value="@Convert.ToDateTime(Model.NgayCapNhat)" />
+                @Html.ValidationMessageFor(model => model.NgayCapNhat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Số lượng:</label>
+            <div class="col-md-10">
+                <input type="number" size="70" name="SoLuong" value="@Model.SoLuong" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Giá bán:</label>
+            <div class="col-md-10">
+                <input type="number" size="70" name="GiaBan" value="@Model.GiaBan" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã loại thú cưng:</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaLoaiTC")
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã nhà cung cấp:</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaNCC")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="LƯU THÔNG TIN" class="btn btn-default" style="font-size:14px; font-weight:bold" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về danh sách", "Pet")
+</div>

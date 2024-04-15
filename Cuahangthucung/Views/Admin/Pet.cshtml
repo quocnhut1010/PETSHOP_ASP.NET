@@ -1,0 +1,118 @@
+﻿@using Cuahangthucung.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Cuahangthucung.Models.THUCUNG>
+
+
+
+
+
+@{
+    ViewBag.Title = "Pet";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Pet</h2>
+
+<p>
+    @Html.ActionLink(" THÊM PET ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="text-align:center"; width="100px">
+            Mã thú cưng
+        </th>
+        <th style="text-align:center"; width="100px">
+            Tên thú cưng
+        </th>
+        <th style="text-align:center"; width="200px">
+           Mô tả
+        </th>
+        <th style="text-align:center"; width="100px">
+            Ảnh bìa
+        </th>
+        <th style="text-align:center"; width="100px" >
+            Ngày cập nhật
+        </th>
+        <th style="text-align:center" ; width="100px">
+           Số lượng
+        </th>
+        <th style="text-align:center" ; width="100px">
+           Giá bán
+        </th>
+        <th style="text-align:center"; width="100px" >
+          Mã loại thú cưng
+        </th>
+        <th style="text-align:center" ; width="100px">
+           Mã nhà cung cấp
+        </th>
+        <th style="text-align:center"; width="200px" ></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Image/"+ item.AnhBia) " width="100"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayCapNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoaiTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNCC)
+            </td>
+            <td >
+                <a href="@Url.Action("Edit", new { id = item.MaTC })" class="btn btn-warning" role="button"
+                   style="background-color: #f39c12; color: #fff; font-size:15px">Sửa</a>
+
+                <a href="@Url.Action("Details", new { id = item.MaTC })" class="btn btn-primary" role="button"
+                   style="background-color: #007bff; color: #fff; font-size: 15px">Chi tiết</a>
+
+                <a href="@Url.Action("Delete", new { id = item.MaTC })" class="btn btn-danger" role="button"
+                   style="background-color: #dc3545; color: #fff; font-size: 15px">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>
+Trang @(Model.PageCount < Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="Menu">
+    @Html.PagedListPager(Model, page => Url.Action("Pet", new { page = page }))
+</div>
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination a {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .pagination a.active {
+                background-color: #f9b536;
+                color: #fff;
+            }
+</style>
